@@ -1,9 +1,13 @@
-import { Button } from "@/shared/ui/button";
+import { CoursesList } from "@/features/courses-list/pub/courses-list";
+import { CreateCourseForm } from "@/features/courses-list/pub/create-course-form";
 
-export default function Home() {
+
+export default async function Home() {
+
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-24">
-      <Button>Button</Button>
+    <main className="flex flex-col min-h-screen p-8">
+      <CreateCourseForm revalidatePagePath="/" className="max-w-[300px] mb-10" />
+      <CoursesList revalidatePagePath="/" />
     </main>
   );
 }
