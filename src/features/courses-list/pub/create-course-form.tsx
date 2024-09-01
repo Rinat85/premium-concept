@@ -27,7 +27,7 @@ export function CreateCourseForm({
   className,
   revalidatePagePath,
 }: {
-  className: string,
+  className: string;
   revalidatePagePath: string;
 }) {
   const [isCreateTransition, startCreateTransition] = useTransition();
