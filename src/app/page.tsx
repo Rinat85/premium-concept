@@ -11,6 +11,7 @@ export default async function Home() {
         className="max-w-[300px] mb-10"
       />
       <p>List</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam unde molestias adipisci, cumque modi iste praesentium optio officiis! Assumenda, doloremque illo sed perspiciatis quos laborum deserunt possimus excepturi commodi saepe!</p>
       <CoursesList revalidatePagePath="/" />
     </main>
   );
