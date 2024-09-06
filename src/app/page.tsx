@@ -12,10 +12,7 @@ export default async function Home() {
       />
       <p>List</p>
       <ul>
-        <li>Test</li>
-        <li>Test1</li>
-        <li>Test2</li>
-        <li>Test3</li>
+        <li>Test123</li>
       </ul>
       <CoursesList revalidatePagePath="/" />
     </main>
