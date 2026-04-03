@@ -1,6 +1,8 @@
 import { z } from "zod";
 
 const privateConfigSchema = z.object({
+  NEXTAUTH_SECRET: z.string().min(1, "NEXTAUTH_SECRET is required"),
+
   GITHUB_ID: z.string().optional(),
   GITHUB_SECRET: z.string().optional(),
 
@@ -8,7 +10,7 @@ const privateConfigSchema = z.object({
   EMAIL_SERVER_PASSWORD: z.string(),
   EMAIL_SERVER_HOST: z.string(),
   EMAIL_SERVER_PORT: z.string(),
-  EMAIL_FROM: z.string(),
+  EMAIL_FROM: z.string().email(),
 });
 
 export const privateConfig = privateConfigSchema.parse(process.env);

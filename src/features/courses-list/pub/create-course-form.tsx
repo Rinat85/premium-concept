@@ -19,16 +19,14 @@ import { Button } from "@/shared/ui/button";
 import { cn } from "@/shared/ui/utils";
 
 const createCourseFormSchema = z.object({
-  name: z.string(),
-  description: z.string(),
+  name: z.string().min(1, "Название обязательно").max(200, "Слишком длинное название"),
+  description: z.string().min(1, "Описание обязательно").max(5000, "Слишком длинное описание"),
 });
 
 export function CreateCourseForm({
   className,
-  revalidatePagePath,
 }: {
   className: string;
-  revalidatePagePath: string;
 }) {
   const [isCreateTransition, startCreateTransition] = useTransition();
   const form = useForm({
@@ -44,7 +42,7 @@ export function CreateCourseForm({
       <form
         onSubmit={form.handleSubmit((data) => {
           startCreateTransition(async () => {
-            createCourseAction(data, revalidatePagePath);
+            createCourseAction(data);
           });
         })}
         className={cn(className, "space-y-4")}
